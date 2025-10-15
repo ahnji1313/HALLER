@@ -121,7 +121,9 @@ fn apply_filter_to_texture(
 }
 
 #[pymodule]
+
 fn envision_gpu_core(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
+
     m.add_function(wrap_pyfunction!(initialize, m)?)?;
     m.add_function(wrap_pyfunction!(render_frame, m)?)?;
     m.add_function(wrap_pyfunction!(apply_filter_to_texture, m)?)?;

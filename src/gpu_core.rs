@@ -71,6 +71,7 @@ impl GpuCore {
             .request_device(
                 &wgpu::DeviceDescriptor {
                     label: Some("envision-gpu-core-device"),
+
                     features: wgpu::Features::empty(),
                     limits: wgpu::Limits::default(),
                 },

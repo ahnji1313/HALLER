@@ -6,7 +6,8 @@
 //! Rust-native GPU processing and Python-driven tools, similar to professional motion graphics
 //! suites like Adobe After Effects.
 
-mod gpu_core;
+pub mod gpu_core;
+pub mod script_host;
 pub mod texture_manager;
 
 use std::sync::Mutex;
@@ -121,9 +122,7 @@ fn apply_filter_to_texture(
 }
 
 #[pymodule]
-
 fn envision_gpu_core(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
-
     m.add_function(wrap_pyfunction!(initialize, m)?)?;
     m.add_function(wrap_pyfunction!(render_frame, m)?)?;
     m.add_function(wrap_pyfunction!(apply_filter_to_texture, m)?)?;

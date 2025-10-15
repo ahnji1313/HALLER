@@ -1,0 +1,17 @@
+[package]
+name = "haller_gpu_core"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "haller_gpu_core"
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1.0"
+once_cell = "1.18"
+pollster = "0.3"
+pyo3 = { version = "0.20", features = ["extension-module"] }
+thiserror = "1.0"
+wgpu = { version = "0.18", features = ["default", "trace"] }
+log = "0.4"

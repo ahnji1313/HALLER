@@ -1,10 +1,10 @@
 [package]
-name = "haller_gpu_core"
+name = "envision_gpu_core"
 version = "0.1.0"
 edition = "2021"
 
 [lib]
-name = "haller_gpu_core"
+name = "envision_gpu_core"
 crate-type = ["cdylib"]
 
 [dependencies]

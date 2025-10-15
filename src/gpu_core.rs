@@ -70,7 +70,8 @@ impl GpuCore {
         let (device, queue) = adapter
             .request_device(
                 &wgpu::DeviceDescriptor {
-                    label: Some("haller-gpu-core-device"),
+                    label: Some("envision-gpu-core-device"),
+
                     features: wgpu::Features::empty(),
                     limits: wgpu::Limits::default(),
                 },

@@ -1,3 +1,11 @@
+//! # Envision GPU Core Engine Roadmap
+//!
+//! This crate powers the Envision editor's GPU subsystem, providing a persistent WGPU-based
+//! rendering core with a Python scripting interface. The long-term goal is to support a
+//! layer-based composition workflow, real-time effect evaluation, and tight integration between
+//! Rust-native GPU processing and Python-driven tools, similar to professional motion graphics
+//! suites like Adobe After Effects.
+
 mod gpu_core;
 pub mod texture_manager;
 
@@ -113,7 +121,9 @@ fn apply_filter_to_texture(
 }
 
 #[pymodule]
-fn haller_gpu_core(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
+
+fn envision_gpu_core(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
+
     m.add_function(wrap_pyfunction!(initialize, m)?)?;
     m.add_function(wrap_pyfunction!(render_frame, m)?)?;
     m.add_function(wrap_pyfunction!(apply_filter_to_texture, m)?)?;
